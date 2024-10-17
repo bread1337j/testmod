@@ -20,6 +20,7 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.SEEL.get());
                         pOutput.accept(ModItems.HARP_SEEL.get());
+                        pOutput.accept(ModItems.SEEL_GRENADE.get());
                     })
                     .build());
 
