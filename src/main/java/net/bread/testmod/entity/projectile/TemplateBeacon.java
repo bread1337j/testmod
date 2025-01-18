@@ -29,6 +29,14 @@ public class TemplateBeacon extends ThrowableItemProjectile {
         super(EntityType.SNOWBALL, pX, pY, pZ, pLevel);
     }
 
+    public TemplateBeacon(EntityType<Snowball> snowball, LivingEntity pShooter, Level pLevel) {
+        super(snowball, pShooter, pLevel);
+    }
+
+    public TemplateBeacon(EntityType<Snowball> snowball, double pX, double pY, double pZ, Level pLevel) {
+        super(snowball, pX, pY, pZ, pLevel);
+    }
+
     protected Item getDefaultItem() {
         return ModItems.AAAA.get();
     }
@@ -81,11 +89,12 @@ public class TemplateBeacon extends ThrowableItemProjectile {
             //this.setPos(this.loc[0], this.loc[1], this.loc[2]);
             //this.setDeltaMovement(0, 0, 0);
 
-            if(c>200){
+            if(c>50){
                 this.setPos(loc[0],loc[1],loc[2]);
                 this.setDeltaMovement(0,0,0);//most optimized code ever award
                 //do stuff ig
                 doStuff();
+                this.discard();
             }
         }
     }
@@ -98,5 +107,9 @@ public class TemplateBeacon extends ThrowableItemProjectile {
     public boolean hurt(DamageSource pSource, float pAmount) {
         //return super.hurt(pSource, pAmount);
         return false; //fuck you kb mechanics
+    }
+    @Override
+    public boolean ignoreExplosion() {
+        return true;
     }
 }

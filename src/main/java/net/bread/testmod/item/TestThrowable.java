@@ -1,5 +1,6 @@
 package net.bread.testmod.item;
 
+import net.bread.testmod.entity.projectile.Beacons.RailgunBeacon;
 import net.bread.testmod.entity.projectile.TemplateBeacon;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -18,7 +19,7 @@ public class TestThrowable extends SnowballItem {
         ItemStack $$3 = pPlayer.getItemInHand(pHand);
         pLevel.playSound((Player)null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!pLevel.isClientSide) {
-            TemplateBeacon $$4 = new TemplateBeacon(pLevel, pPlayer);
+            RailgunBeacon $$4 = new RailgunBeacon(pLevel, pPlayer);
             $$4.setItem($$3);
             $$4.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 1.0F);
             pLevel.addFreshEntity($$4);
