@@ -21,6 +21,8 @@ public class ModItems {
             ()-> new seelgrenade(new Item.Properties()));
     public static final RegistryObject<seelgun> SEEL_GUN = ITEMS.register("seel_gun",
             ()-> new seelgun(new Item.Properties()));
+    public static final RegistryObject<TestThrowable> AAAA = ITEMS.register("aaaa",
+            ()-> new TestThrowable(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

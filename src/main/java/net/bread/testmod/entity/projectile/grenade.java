@@ -24,7 +24,7 @@ public class grenade extends ThrowableItemProjectile {
         super(EntityType.SNOWBALL, pX, pY, pZ, pLevel);
     }
 
-
+    @Override
     protected Item getDefaultItem() {
         return ModItems.SEEL_GRENADE.get();
     }
