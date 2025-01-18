@@ -89,12 +89,12 @@ public class TemplateBeacon extends ThrowableItemProjectile {
             //this.setPos(this.loc[0], this.loc[1], this.loc[2]);
             //this.setDeltaMovement(0, 0, 0);
 
-            if(c>50){
+            if(c>20){
                 this.setPos(loc[0],loc[1],loc[2]);
                 this.setDeltaMovement(0,0,0);//most optimized code ever award
                 //do stuff ig
                 doStuff();
-                this.discard();
+                //this.discard();
             }
         }
     }
@@ -107,9 +107,5 @@ public class TemplateBeacon extends ThrowableItemProjectile {
     public boolean hurt(DamageSource pSource, float pAmount) {
         //return super.hurt(pSource, pAmount);
         return false; //fuck you kb mechanics
-    }
-    @Override
-    public boolean ignoreExplosion() {
-        return true;
     }
 }

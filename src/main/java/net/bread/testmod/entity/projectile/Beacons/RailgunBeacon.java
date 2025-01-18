@@ -23,9 +23,26 @@ public class RailgunBeacon extends TemplateBeacon {
     @Override
     protected void doStuff() {
         //super.doStuff();
-        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX()+Math.random(), this.getY()+1000,this.getZ()+Math.random());
+        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX(), this.getY()+1000,this.getZ(), (int)this.getY()/3);
+        int offset = (int)(Math.random()*11)-5;
+        if(this.getX() > 0){
+            ent.setPos(ent.getX()-75+offset, ent.getY(), ent.getZ());
+        }else{
+            ent.setPos(ent.getX()+75+offset, ent.getY(), ent.getZ());
+        }
+        if(this.getZ() > 0){
+            ent.setPos(ent.getX(), ent.getY(), ent.getZ()-75+offset);
+        }else{
+            ent.setPos(ent.getX(), ent.getY(), ent.getZ()+75+offset);
+        }
+
         this.level().addFreshEntity(ent);
-        ent.setDeltaMovement(0, -100, 0);
+        ent.setDeltaMovement(
+                ((ent.getX()) > 0)? 2:-2,
+                -100,
+                ((ent.getZ()) > 0)? 2:-2
+        );
+        this.discard();
 
     }
 }
