@@ -21,6 +21,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SEEL.get());
                         pOutput.accept(ModItems.HARP_SEEL.get());
                         pOutput.accept(ModItems.SEEL_GRENADE.get());
+                        pOutput.accept(ModItems.Railgun.get());
+                        pOutput.accept(ModItems.Gattling.get());
                     })
                     .build());
 

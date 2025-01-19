@@ -92,6 +92,7 @@ public class TemplateBeacon extends ThrowableItemProjectile {
             if(c>20){
                 this.setPos(loc[0],loc[1],loc[2]);
                 this.setDeltaMovement(0,0,0);//most optimized code ever award
+                this.setInvisible(true);
                 //do stuff ig
                 doStuff();
                 //this.discard();

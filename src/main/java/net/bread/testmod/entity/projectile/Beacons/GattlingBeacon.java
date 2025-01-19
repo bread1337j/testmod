@@ -67,7 +67,7 @@ public class GattlingBeacon extends TemplateBeacon {
     protected void doStuff() {
         //super.doStuff();
 
-        if(c>200) {
+        if(c>800) {
 
             this.discard();
         }

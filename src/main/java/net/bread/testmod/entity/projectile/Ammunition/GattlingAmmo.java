@@ -20,7 +20,7 @@ public class GattlingAmmo extends ThrowableItemProjectile {
     }
     public GattlingAmmo(Level pLevel, double pX, double pY, double pZ, int offset) {
         super(EntityType.SNOWBALL, pX, pY, pZ, pLevel);
-
+        this.setInvulnerable(true);
         this.setNoGravity(true);
         this.offset = offset;
     }
@@ -43,7 +43,7 @@ public class GattlingAmmo extends ThrowableItemProjectile {
             d0 = (double)4.0F;
         }
 
-        d0 *= (double)256.0F;
+        d0 *= (double)512.0F;
         return pDistance < d0 * d0;
     }
 

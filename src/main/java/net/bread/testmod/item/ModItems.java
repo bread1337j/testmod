@@ -1,5 +1,6 @@
 package net.bread.testmod.item;
 
+import net.bread.testmod.entity.projectile.Beacons.RailgunBeacon;
 import net.bread.testmod.testmod;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SnowballItem;
@@ -23,6 +24,10 @@ public class ModItems {
             ()-> new seelgun(new Item.Properties()));
     public static final RegistryObject<TestThrowable> AAAA = ITEMS.register("aaaa",
             ()-> new TestThrowable(new Item.Properties()));
+    public static final RegistryObject<Gattling> Gattling = ITEMS.register("gattling_stratagem",
+            () -> new Gattling(new Item.Properties()));
+    public static final RegistryObject<Railgun> Railgun = ITEMS.register("railgun_stratagem",
+            () -> new Railgun(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
