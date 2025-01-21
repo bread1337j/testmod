@@ -23,6 +23,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SEEL_GRENADE.get());
                         pOutput.accept(ModItems.Railgun.get());
                         pOutput.accept(ModItems.Gattling.get());
+                        pOutput.accept(ModItems.Napalm.get());
+                        pOutput.accept(ModItems.Lockheed.get());
                     })
                     .build());
 

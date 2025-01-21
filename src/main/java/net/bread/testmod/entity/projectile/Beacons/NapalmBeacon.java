@@ -1,7 +1,7 @@
 package net.bread.testmod.entity.projectile.Beacons;
 
 import net.bread.testmod.entity.projectile.Ammunition.GattlingAmmo;
-import net.bread.testmod.entity.projectile.Ammunition.RailgunAmmo;
+import net.bread.testmod.entity.projectile.Ammunition.NapalmAmmo;
 import net.bread.testmod.entity.projectile.TemplateBeacon;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,19 +9,19 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
-public class GattlingBeacon extends TemplateBeacon {
+public class NapalmBeacon extends TemplateBeacon {
     private int c;
     private boolean landed;
 
-    public GattlingBeacon(EntityType<? extends Snowball> pEntityType, Level pLevel) {
+    public NapalmBeacon(EntityType<? extends Snowball> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public GattlingBeacon(Level pLevel, LivingEntity pShooter) {
+    public NapalmBeacon(Level pLevel, LivingEntity pShooter) {
         super(EntityType.SNOWBALL, pShooter, pLevel);
     }
 
-    public GattlingBeacon(Level pLevel, double pX, double pY, double pZ) {
+    public NapalmBeacon(Level pLevel, double pX, double pY, double pZ) {
         super(EntityType.SNOWBALL, pX, pY, pZ, pLevel);
     }
 
@@ -30,11 +30,11 @@ public class GattlingBeacon extends TemplateBeacon {
         if(!landed){
             super.tick();
         }else {
-            if(c%5==0){
-                GattlingAmmo ent = new GattlingAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14, this.getZ(), (int) this.getY() / 3);
+            //if(c%1==0){
+                NapalmAmmo ent = new NapalmAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14, this.getZ(), (int) this.getY() / 3);
                 ent.setOwner(this.getOwner());
-                int offset1 = ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5);
-                int offset2 = ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5);
+                int offset1 = ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40);
+                int offset2 = ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40);
                 if (this.getX() > 0) {
                     ent.setPos(ent.getX() - 75 + offset1, ent.getY(), ent.getZ());
                 } else {
@@ -52,7 +52,7 @@ public class GattlingBeacon extends TemplateBeacon {
                         -100,
                         ((ent.getZ()) > 0) ? 2 : -2
                 );
-            }
+            //}
             c++;
             if(c>800){
                 this.discard();

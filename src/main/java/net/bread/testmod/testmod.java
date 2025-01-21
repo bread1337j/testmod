@@ -1,9 +1,12 @@
 package net.bread.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.bread.testmod.entity.ModEntities;
 import net.bread.testmod.item.ModCreativeModTabs;
 import net.bread.testmod.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,6 +37,7 @@ public class testmod {
         ModCreativeModTabs.register(modEventBus );
 
         ModItems.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -79,6 +83,12 @@ public class testmod {
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
+
+            EntityRenderers.register(ModEntities.RAILGUN_PROJ.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.GATTLING_PROJ.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.NAPALM_PROJ.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModEntities.LOCKHEED_PROJ.get(), ThrownItemRenderer::new);
+
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

@@ -9,6 +9,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.concurrent.locks.Lock;
+
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, testmod.MOD_ID);
@@ -28,6 +30,20 @@ public class ModItems {
             () -> new Gattling(new Item.Properties()));
     public static final RegistryObject<Railgun> Railgun = ITEMS.register("railgun_stratagem",
             () -> new Railgun(new Item.Properties()));
+    public static final RegistryObject<Napalm> Napalm = ITEMS.register("napalm_stratagem",
+            () -> new Napalm(new Item.Properties()));
+    public static final RegistryObject<Lockheed> Lockheed = ITEMS.register("lockheed_stratagem",
+            () -> new Lockheed(new Item.Properties()));
+
+    //this is just bloat TBH but idk how else to do this
+    public static final RegistryObject<GattlingAmmunition> GattlingAmmunition = ITEMS.register("gattlingproj",
+            () -> new GattlingAmmunition(new Item.Properties()));
+    public static final RegistryObject<RailgunAmmunition> RailgunAmmunition = ITEMS.register("railgunproj",
+            () -> new RailgunAmmunition(new Item.Properties()));
+    public static final RegistryObject<NapalmAmmunition> NapalmAmmunition = ITEMS.register("napalmproj",
+            () -> new NapalmAmmunition(new Item.Properties()));
+    public static final RegistryObject<LockheedAmmunition> LockheedAmmunition = ITEMS.register("lockheedproj",
+            () -> new LockheedAmmunition(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

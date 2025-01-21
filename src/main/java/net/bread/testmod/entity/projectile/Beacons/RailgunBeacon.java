@@ -23,17 +23,19 @@ public class RailgunBeacon extends TemplateBeacon {
     @Override
     protected void doStuff() {
         //super.doStuff();
-        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX(), this.getY()+1000,this.getZ(), (int)this.getY()/3);
-        int offset = (int)(Math.random()*11)-5;
+        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14,this.getZ(), (int)this.getY()/3);
+        ent.setOwner(this.getOwner());
+        int offset1 = (int)(Math.random()*5)-2;
+        int offset2 = (int)(Math.random()*5)-2;
         if(this.getX() > 0){
-            ent.setPos(ent.getX()-75+offset, ent.getY(), ent.getZ());
+            ent.setPos(ent.getX()-75+offset1, ent.getY(), ent.getZ());
         }else{
-            ent.setPos(ent.getX()+75+offset, ent.getY(), ent.getZ());
+            ent.setPos(ent.getX()+75+offset1, ent.getY(), ent.getZ());
         }
         if(this.getZ() > 0){
-            ent.setPos(ent.getX(), ent.getY(), ent.getZ()-75+offset);
+            ent.setPos(ent.getX(), ent.getY(), ent.getZ()-75+offset2);
         }else{
-            ent.setPos(ent.getX(), ent.getY(), ent.getZ()+75+offset);
+            ent.setPos(ent.getX(), ent.getY(), ent.getZ()+75+offset2);
         }
 
         this.level().addFreshEntity(ent);

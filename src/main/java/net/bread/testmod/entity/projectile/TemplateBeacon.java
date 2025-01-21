@@ -41,7 +41,7 @@ public class TemplateBeacon extends ThrowableItemProjectile {
         return ModItems.AAAA.get();
     }
 
-    protected void doStuff(){ //can be overriden
+    protected void doStuff(){ //SHOULD be overriden
         this.level().explode(this, this.getX(), this.getY(), this.getZ(), 5, true, Level.ExplosionInteraction.BLOCK);
         this.discard();
     }
@@ -68,7 +68,13 @@ public class TemplateBeacon extends ThrowableItemProjectile {
             super.move(pType, pPos);
         }else{
             //do nothing lmao
+            //epic troll this does not work!
         }
+    }
+
+    @Override
+    public boolean ignoreExplosion() {
+        return true;
     }
 
     @Override
@@ -89,7 +95,7 @@ public class TemplateBeacon extends ThrowableItemProjectile {
             //this.setPos(this.loc[0], this.loc[1], this.loc[2]);
             //this.setDeltaMovement(0, 0, 0);
 
-            if(c>20){
+            if(c>200){
                 this.setPos(loc[0],loc[1],loc[2]);
                 this.setDeltaMovement(0,0,0);//most optimized code ever award
                 this.setInvisible(true);

@@ -1,5 +1,6 @@
 package net.bread.testmod.entity.projectile.Ammunition;
 
+import net.bread.testmod.entity.ModEntities;
 import net.bread.testmod.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,22 +12,22 @@ import net.minecraft.world.phys.HitResult;
 
 public class GattlingAmmo extends ThrowableItemProjectile {
     private int offset = 0;
-    public GattlingAmmo(EntityType<? extends Snowball> pEntityType, Level pLevel) {
+    public GattlingAmmo(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public GattlingAmmo(Level pLevel, LivingEntity pShooter) {
-        super(EntityType.SNOWBALL, pShooter, pLevel);
+        super(ModEntities.GATTLING_PROJ.get(), pShooter, pLevel);
     }
     public GattlingAmmo(Level pLevel, double pX, double pY, double pZ, int offset) {
-        super(EntityType.SNOWBALL, pX, pY, pZ, pLevel);
+        super(ModEntities.GATTLING_PROJ.get(), pX, pY, pZ, pLevel);
         this.setInvulnerable(true);
         this.setNoGravity(true);
         this.offset = offset;
     }
     @Override
     protected Item getDefaultItem() {
-        return ModItems.SEEL_GRENADE.get();
+        return ModItems.GattlingAmmunition.get();
     }
 
     @Override
@@ -66,5 +67,6 @@ public class GattlingAmmo extends ThrowableItemProjectile {
     public boolean ignoreExplosion() {
         return true;
     }
+
 
 }
