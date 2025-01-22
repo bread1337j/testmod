@@ -21,11 +21,11 @@ public class LockheedAmmo extends ThrowableItemProjectile {
         super(ModEntities.LOCKHEED_PROJ.get(), pShooter, pLevel);
         this.setItem(new ItemStack(this.getDefaultItem()));
     }
-    public LockheedAmmo(Level pLevel, double pX, double pY, double pZ, int offset) {
+    public LockheedAmmo(Level pLevel, double pX, double pY, double pZ, int pOffset) {
         super(ModEntities.LOCKHEED_PROJ.get(), pX, pY, pZ, pLevel);
         this.setInvulnerable(true);
         this.setNoGravity(true);
-        this.offset = offset;
+        this.offset = pOffset;
     }
     @Override
     protected Item getDefaultItem() {
@@ -54,14 +54,8 @@ public class LockheedAmmo extends ThrowableItemProjectile {
 
     @Override
     public void tick() {
-        if (this.getY() < (300+offset)) {
-            if (Math.abs(this.getDeltaMovement().y) > 25) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.5), this.getDeltaMovement().z);
-            } else if (this.getDeltaMovement().y > 5) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.25), this.getDeltaMovement().z);
-            } else {
+        if (this.getY() < (300+this.offset)) {
                 this.setDeltaMovement(this.getDeltaMovement().x(), -4, this.getDeltaMovement().z());
-            }
         }
 
         super.tick();

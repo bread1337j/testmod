@@ -26,10 +26,10 @@ public class NapalmAmmo extends ThrowableItemProjectile {
         super(ModEntities.NAPALM_PROJ.get(), pShooter, pLevel);
     }
 
-    public NapalmAmmo(Level pLevel, double pX, double pY, double pZ, int offset) {
+    public NapalmAmmo(Level pLevel, double pX, double pY, double pZ, int pOffset) {
         super(ModEntities.NAPALM_PROJ.get(), pX, pY, pZ, pLevel);
         this.setNoGravity(true);
-        this.offset = offset;
+        this.offset = pOffset;
     }
     @Override
     protected Item getDefaultItem() {
@@ -47,14 +47,8 @@ public class NapalmAmmo extends ThrowableItemProjectile {
 
     @Override
     public void tick() {
-        if (this.getY() < (300+offset)) {
-            if (Math.abs(this.getDeltaMovement().y) > 25) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.5), this.getDeltaMovement().z);
-            } else if (this.getDeltaMovement().y > 5) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.25), this.getDeltaMovement().z);
-            } else {
-                this.setDeltaMovement(this.getDeltaMovement().x(), -2, this.getDeltaMovement().z());
-            }
+        if (this.getY() < (300+this.offset)) {
+            this.setDeltaMovement(this.getDeltaMovement().x(), -2, this.getDeltaMovement().z());
         }
 
         super.tick();

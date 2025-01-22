@@ -23,7 +23,7 @@ public class RailgunBeacon extends TemplateBeacon {
     @Override
     protected void doStuff() {
         //super.doStuff();
-        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14,this.getZ(), (int)this.getY()/3);
+        RailgunAmmo ent = new RailgunAmmo(this.level(), this.getX(), 925+this.getY() ,this.getZ(), (int)this.getY()-75);
         ent.setOwner(this.getOwner());
         int offset1 = (int)(Math.random()*5)-2;
         int offset2 = (int)(Math.random()*5)-2;

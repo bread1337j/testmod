@@ -31,7 +31,7 @@ public class GattlingBeacon extends TemplateBeacon {
             super.tick();
         }else {
             if(c%5==0){
-                GattlingAmmo ent = new GattlingAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14, this.getZ(), (int) this.getY() / 3);
+                GattlingAmmo ent = new GattlingAmmo(this.level(), this.getX(), 925+this.getY() ,this.getZ(), (int)this.getY()-75);
                 ent.setOwner(this.getOwner());
                 int offset1 = ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5);
                 int offset2 = ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5) + ((int) (Math.random() * 11) - 5);

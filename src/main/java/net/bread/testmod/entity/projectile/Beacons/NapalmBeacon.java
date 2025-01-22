@@ -31,7 +31,7 @@ public class NapalmBeacon extends TemplateBeacon {
             super.tick();
         }else {
             //if(c%1==0){
-                NapalmAmmo ent = new NapalmAmmo(this.level(), this.getX(), 1000+(this.getY()-60)*14, this.getZ(), (int) this.getY() / 3);
+                NapalmAmmo ent = new NapalmAmmo(this.level(), this.getX(), 925+this.getY() ,this.getZ(), (int)this.getY()-75);
                 ent.setOwner(this.getOwner());
                 int offset1 = ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40);
                 int offset2 = ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40) + ((int) (Math.random() * 81) - 40);

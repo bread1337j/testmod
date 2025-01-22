@@ -23,12 +23,12 @@ public class RailgunAmmo extends ThrowableItemProjectile {
         super(ModEntities.RAILGUN_PROJ.get(), pShooter, pLevel);
     }
 
-    public RailgunAmmo(Level pLevel, double pX, double pY, double pZ, int offset) {
+    public RailgunAmmo(Level pLevel, double pX, double pY, double pZ, int pOffset) {
         super(ModEntities.RAILGUN_PROJ.get(), pX, pY, pZ, pLevel);
         this.setNoGravity(true);
         this.landed = false;
         this.hp = 10;
-        this.offset = offset;
+        this.offset = pOffset;
     }
     @Override
     protected Item getDefaultItem() {
@@ -49,14 +49,8 @@ public class RailgunAmmo extends ThrowableItemProjectile {
     @Override
     public void tick() {
 
-        if (this.getY() < (300+offset) && !landed) {
-            if (Math.abs(this.getDeltaMovement().y) > 25) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.5), this.getDeltaMovement().z);
-            } else if (this.getDeltaMovement().y > 5) {
-                this.setDeltaMovement(this.getDeltaMovement().x, this.getDeltaMovement().y * (0.25), this.getDeltaMovement().z);
-            } else {
-                this.setDeltaMovement(this.getDeltaMovement().x(), -4, this.getDeltaMovement().z());
-            }
+        if (this.getY() < (300+this.offset) && !landed) {
+            this.setDeltaMovement(this.getDeltaMovement().x(), -4, this.getDeltaMovement().z());
         }
         if(this.landed){
             this.setDeltaMovement(this.getDeltaMovement().x(), -0.2*hp, this.getDeltaMovement().z());
