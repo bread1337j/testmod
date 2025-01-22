@@ -4,10 +4,9 @@ import net.bread.testmod.entity.projectile.Ammunition.GattlingAmmo;
 import net.bread.testmod.entity.projectile.Ammunition.LockheedAmmo;
 import net.bread.testmod.entity.projectile.Ammunition.NapalmAmmo;
 import net.bread.testmod.entity.projectile.Ammunition.RailgunAmmo;
-import net.bread.testmod.testmod;
+import net.bread.testmod.breadmod;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, testmod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, breadmod.MOD_ID);
 
     public static final RegistryObject<EntityType<RailgunAmmo>> RAILGUN_PROJ =
             ENTITY_TYPES.register("railgunprojectile", () -> EntityType.Builder.<RailgunAmmo>of(RailgunAmmo::new, MobCategory.MISC)

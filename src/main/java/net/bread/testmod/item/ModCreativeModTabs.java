@@ -1,6 +1,6 @@
 package net.bread.testmod.item;
 
-import net.bread.testmod.testmod;
+import net.bread.testmod.breadmod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, testmod.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, breadmod.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> SEEL_TAB = CREATIVE_MODE_TABS.register("seel_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.HARP_SEEL.get()))

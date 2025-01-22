@@ -1,19 +1,15 @@
 package net.bread.testmod.item;
 
-import net.bread.testmod.entity.projectile.Beacons.RailgunBeacon;
-import net.bread.testmod.testmod;
+import net.bread.testmod.breadmod;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SnowballItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.concurrent.locks.Lock;
-
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, testmod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, breadmod.MOD_ID);
 
 
     public static final RegistryObject<Item> SEEL = ITEMS.register( "seel",

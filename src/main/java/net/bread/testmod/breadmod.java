@@ -7,7 +7,6 @@ import net.bread.testmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,13 +23,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(testmod.MOD_ID)
-public class testmod {
+@Mod(breadmod.MOD_ID)
+public class breadmod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "breadtestmod2281337";
+    public static final String MOD_ID = "breadmod1337";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    public testmod()
+    public breadmod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
